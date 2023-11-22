@@ -1,0 +1,45 @@
+
+<div class="all">
+  <div *ngFor="let user of users1">
+    <div *ngIf="user.age > 20">
+      <p>{{ user.firstname }} {{ user.lastname }} (Age: {{ user.age }})</p>
+    </div>
+  </div>
+    <div class="5">
+      <form (ngSubmit)="addUser()">
+        <div class="form-group">
+          <label for="firstname">First Name:</label>
+          <input type="text" formControlName="Firstname" class="form-control">
+        <div *ngIf="userForm.get('Firstname')!.invalid && userForm.get('Firstname')!.touched"
+             class="invalid-feedback">
+             <span>First Name is required and must be at least 3 characters</span>
+        </div>
+        <label for="lastname">Last Name:</label>
+        <input type="text" formControlName="Lastname" class="form-control" name="lastname">
+        <div *ngIf="userForm.get('Lastname')!.invalid && userForm.get('Lastname')!.touched"
+          class="invalid-feedback">
+          <span>First Name is required and must be at least 3 characters</span>
+        </div>
+        <label for="Email">Email:</label>
+        <input type="text" formControlName="Email" class="form-control" name="Email">
+        <div *ngIf="userForm.get('Email')!.invalid && userForm.get('Email')!.touched"
+          class="invalid-feedback">
+          <span>First Name is required and must be at least 3 characters</span>
+        </div>
+        <label for="DateOFBirth">Date OF Birth:</label>
+        <input type="date" formControlName="DateOFBirth" class="form-control" name="DateOFBirth">
+        <div *ngIf="userForm.get('Firstname')!.invalid && userForm.get('Firstname')!.touched"
+          class="invalid-feedback">
+          <span>First Name is required and must be at least 3 characters</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Add User</button>
+        </div>
+      </form>
+    </div>
+  
+    
+    <app-user [users]="usersArray"></app-user>
+    <app-user></app-user>
+    <router-outlet></router-outlet>
+</div>
+

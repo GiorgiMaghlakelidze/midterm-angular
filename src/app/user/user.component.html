@@ -1,0 +1,21 @@
+<div>
+
+    <p>user works!</p>
+    
+<h1>Array from parent component</h1>
+<ul>
+    <li *ngFor="let user of users">
+        {{ user.Firstname }} {{ user.Lastname }} - {{ user.Email }}
+    </li>
+</ul>
+    <!-- <button [click]="display()">Display service</button> -->
+</div>
+<div *ngFor="let user of users">
+    <p>ID: {{ user.Id }}</p>
+    <p>First Name: {{ user.Firstname }}</p>
+    <p>Last Name: {{ user.Lastname }}</p>
+    <p>Date of Birth: {{ user.DateOfBirth }}</p>
+    <p>Phone Number: {{ user.PhoneNumber }}</p>
+    <p>Email: {{ user.Email }}</p>
+    <hr>
+  </div>
